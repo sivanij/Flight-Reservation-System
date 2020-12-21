@@ -1,9 +1,9 @@
 package com.company;
 
-public abstract class TouristTicket extends Ticket{
+public  class TouristTicket extends Ticket{
 
     private HotelAddress hotelAddress;
-    private String selectedTouristLocations;
+    private String[] selectedTouristLocations;
     private Flight flight;
     static class HotelAddress {
         public String hotelName;
@@ -16,9 +16,15 @@ public abstract class TouristTicket extends Ticket{
             this.city = city;
         }
     }
-    public TouristTicket(String destinationLocation,String seatNo,float price,String arrivalLocation,String departureDateTime,String arrivalDateTime,String specialServices,Flight flight){
-        super(destinationLocation,seatNo, price,arrivalLocation,departureDateTime,arrivalDateTime);
-        this.flight=flight;
+
+    public TouristTicket(String pnr, String destinationLocation, String arrivalLocation, String departureDateTime, String arrivalDateTime, String seatNo, float price, Flight flight) {
+        super(pnr, destinationLocation, arrivalLocation, departureDateTime, arrivalDateTime, seatNo, price, flight);
+
+        this.flight = flight;
+    }
+
+    public TouristTicket(String pnr){
+        super(pnr);
     }
 
 
@@ -26,7 +32,7 @@ public abstract class TouristTicket extends Ticket{
         return hotelAddress;
     }
 
-    public String getSelectedTouristLocations() {
+    public String[] getSelectedTouristLocations() {
         return selectedTouristLocations;
     }
     public void removeTouristLocation(String location){

@@ -3,10 +3,15 @@ package com.company;
 public class RegularTicket extends Ticket {
     private String specialServices;
     private Flight flight;
-    public RegularTicket(String destinationLocation,String seatNo,float price,String arrivalLocation,String departureDateTime,String arrivalDateTime,String specialServices,Flight flight){
-        super(destinationLocation,seatNo, price,arrivalLocation,departureDateTime,arrivalDateTime);
-        this.specialServices=specialServices;
-        this.flight=flight;
+
+    public RegularTicket(String pnr, String destinationLocation, String arrivalLocation, String departureDateTime, String arrivalDateTime, String seatNo, float price, Flight flight, String specialServices) {
+        super(pnr, destinationLocation, arrivalLocation, departureDateTime, arrivalDateTime, seatNo, price, flight);
+        this.specialServices = specialServices;
+        this.flight = flight;
+    }
+
+    public  RegularTicket(String pnr){
+        super(pnr);
     }
     public String getSpecialServices() {
         return specialServices;

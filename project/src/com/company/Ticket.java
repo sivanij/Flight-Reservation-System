@@ -1,5 +1,7 @@
 package com.company;
 
+import java.time.LocalDateTime;
+
 public class Ticket {
     private String pnr;
     private String destinationLocation;
@@ -33,6 +35,9 @@ public class Ticket {
         this.seatNo = seatNo;
         this.price = price;
         this.flight=flight;
+    }
+    public Ticket(String pnr){
+        this.pnr=pnr;
     }
 
     public String getPnr() {
@@ -115,10 +120,15 @@ public class Ticket {
         this.passenger = passenger;
     }
     public String checkStatus(){
-        return "fgfg";
+        return flight.getFlightNumber()+","+flight.getAirline();
+
     }
     public int getFlightDuration(){
-        return 11;
+        LocalDateTime departureTimeStamp=LocalDateTime.parse(this.departureDateTime);
+        LocalDateTime arrivalTimeStamp=LocalDateTime.parse(this.arrivalDateTime);
+        int days=arrivalTimeStamp.getDayOfMonth()-departureTimeStamp.getDayOfMonth();
+        int totalHours=(days*24)+(arrivalTimeStamp.getHour()-departureTimeStamp.getHour());
+        return totalHours;
     }
 
     public Ticket(Passenger passenger){
@@ -126,6 +136,7 @@ public class Ticket {
     }
 
     public void cancel(){
-
+      cancelled=true;
     }
+
 }

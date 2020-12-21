@@ -4,9 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Contact contact=new Contact("sivani",247468,"sivani@gmail.com");
-        Address address=new Address("telangana","hydrabad","kbhb");
-        Passenger passenger=new Passenger(1,address,contact);
+        Passenger passenger=new Passenger("kphb","Hydrabad","karnataka","sivani",867543221,"sivani@gmail.com");
         System.out.println("passenger:"+passenger.address.getStreet());
         Flight flight=new Flight("Abc123","jet",300,250);
 
@@ -14,12 +12,11 @@ public class Main {
         Ticket ticket1=new Ticket(passenger);
         System.out.println("ticket1:   "+ticket1.getPassenger().address.getCity());
         System.out.println(ticket.getDestinationLocation());
-        System.out.println(address.getCity());
-        //accessing private attributes in contact class
-        System.out.println(contact.getEmail());
         System.out.println();
+        //accessing private attributes in contact class
         System.out.println(passenger.address.getCity());
         System.out.println(passenger.contact.getPhoneNumber());
+        System.out.println(passenger.getAddress());
         //accesing flightobject inside the ticket
         System.out.println(ticket.getFlight().getFlightNumber());
 
@@ -30,8 +27,18 @@ public class Main {
 
         //getting passenger count
         System.out.println(passenger.getPassengerCount());
+        RegularTicket regularTicket=new RegularTicket("reg-123","delhi","hydrabad","12/12/20","13/12/20","1b",2222,
+                flight,"food");
+        String hotelAddress="sitara,ring road,hydrabad";
+        String[] selectedTouristLocations={"shimla,manali"};
+        TouristTicket touristTicket=new TouristTicket("tt-123","delhi","hydrabad","12/12/20","13/12/20","1b",2222,
+                flight);
+        //accessing pnr numbers
+        printTicketDetails(regularTicket);
+        printTicketDetails(touristTicket);
+    }
+    public static void printTicketDetails(Ticket ticket){
 
-
-
+        System.out.println("pnrnumber:  "+ticket.getPnr());
     }
 }

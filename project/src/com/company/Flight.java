@@ -31,11 +31,13 @@ public class Flight {
 
     }
     public boolean checkAvailabulity(){
-
+       if(this.bookedSeat<capacity){
+           return true;
+       }else
         return true;
 
     }
     public void incrementBookingCounter(){
-
+        System.out.println(this.bookedSeat++);
     }
 }
