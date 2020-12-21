@@ -1,9 +1,9 @@
 package com.company;
 
 public class Address {
-    public String state;
-    public String city;
-    public String street;
+    private String state;
+    private String city;
+    private String street;
 
     public Address(String state, String city, String street) {
         this.state = state;

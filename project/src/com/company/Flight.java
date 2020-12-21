@@ -1,11 +1,11 @@
 package com.company;
 
 public class Flight {
-    public String flightNumber;
-    public String airline;
-    public int capacity;
+    private String flightNumber;
+    private String airline;
+    private int capacity;
     private int bookedSeat;
-    public Ticket ticket;
+    private Ticket ticket;
 
     public String getFlightNumber() {
         return flightNumber;

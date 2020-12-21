@@ -1,10 +1,10 @@
 package com.company;
 
 public class Contact {
-    public String name;
-    public int phoneNumber;
-    public String email;
-    public Contact(String name,int phoneNumber,String email){
+    private String name;
+    private int phoneNumber;
+    private String email;
+   public  Contact(String name, int phoneNumber, String email){
         this.name=name;
         this.phoneNumber=phoneNumber;
         this.email=email;
@@ -27,6 +27,10 @@ public class Contact {
      }
      public  void setEmail(String email){
          this.email=email;
+     }
+     public   String getContactDetails(){
+
+        return this.name+"  "+this.phoneNumber+"  "+this.email;
      }
 
 }

@@ -1,8 +1,8 @@
 package com.company;
 
 public class RegularTicket {
-    public String specialServices;
-
+    private String specialServices;
+    private Flight flight;
     public String getSpecialServices() {
         return specialServices;
     }
