@@ -1,11 +1,28 @@
 package com.company;
 
-public class TouristTicket {
-    public String hotelAddress;
-    public String selectedTouristLocations;
-    public Flight flight;
+public abstract class TouristTicket extends Ticket{
 
-    public String getHotelAddress() {
+    private HotelAddress hotelAddress;
+    private String selectedTouristLocations;
+    private Flight flight;
+    static class HotelAddress {
+        public String hotelName;
+        public String hotelStreet;
+        public String city;
+
+        public HotelAddress(String hotelName, String hotelStreet, String city) {
+            this.hotelName = hotelName;
+            this.hotelStreet = hotelStreet;
+            this.city = city;
+        }
+    }
+    public TouristTicket(String destinationLocation,String seatNo,float price,String arrivalLocation,String departureDateTime,String arrivalDateTime,String specialServices,Flight flight){
+        super(destinationLocation,seatNo, price,arrivalLocation,departureDateTime,arrivalDateTime);
+        this.flight=flight;
+    }
+
+
+    public HotelAddress getHotelAddress() {
         return hotelAddress;
     }
 

@@ -17,7 +17,7 @@ public class Main {
         System.out.println(address.getCity());
         //accessing private attributes in contact class
         System.out.println(contact.getEmail());
-
+        System.out.println();
         System.out.println(passenger.address.getCity());
         System.out.println(passenger.contact.getPhoneNumber());
         //accesing flightobject inside the ticket

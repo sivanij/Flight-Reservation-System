@@ -11,12 +11,18 @@ public class Ticket {
     private boolean cancelled;
     private Flight flight;
     private Passenger passenger;
-    public String checkStatus(){
-        return "fgfg";
+
+    public Ticket(String destinationLocation, String seatNo, float price, String arrivalLocation, String departureDateTime, String arrivalDateTime) {
+     this.destinationLocation=destinationLocation;
+     this.seatNo=seatNo;
+     this.price=price;
+     this.arrivalLocation=arrivalLocation;
+     this.departureDateTime=departureDateTime;
+     this.arrivalDateTime=arrivalDateTime;
+
+
     }
-    public int getFlightDuration(){
-        return 11;
-    }
+
 
     public Ticket(String pnr, String destinationLocation, String arrivalLocation, String departureDateTime, String arrivalDateTime, String seatNo, float price,Flight flight) {
         this.pnr = pnr;
@@ -107,6 +113,12 @@ public class Ticket {
 
     public void setPassenger(Passenger passenger) {
         this.passenger = passenger;
+    }
+    public String checkStatus(){
+        return "fgfg";
+    }
+    public int getFlightDuration(){
+        return 11;
     }
 
     public Ticket(Passenger passenger){
